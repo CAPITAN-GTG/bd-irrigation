@@ -1,65 +1,135 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Leaf, Droplets, TreePine, Building2, ArrowRight } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
 
-export default function Home() {
+const PHONE = "469-835-4691";
+
+export const metadata = createPageMetadata({
+  title: "Custom Landscaping & Irrigation Services in DFW",
+  description:
+    "BDI Landscape | Irrigation offers custom landscaping, efficient irrigation systems, and year-round maintenance across the Dallas-Fort Worth area. Licensed. Free estimates. Call today.",
+  path: "/",
+});
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="hero">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/pic-1.jpg"
+          alt=""
+          fill
+          className="hero__image"
+          sizes="100vw"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="hero__overlay" aria-hidden />
+        <div className="hero__content">
+          <div className="hero__inner">
+            <h1 className="hero__title">Custom Landscaping & Irrigation in DFW</h1>
+            <p className="hero__tagline">
+              Licensed irrigation and year-round maintenance for residential and commercial properties. Free estimates.
+            </p>
+            <p className="hero__cta">
+              <Link href="/contact" className="hero__cta-link">Get a Free Estimate</Link>
+              <span className="hero__cta-divider">or call</span>
+              <a href={`tel:${PHONE.replace(/-/g, "")}`} className="hero__cta-phone">{PHONE}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section page-section--lg">
+        <div className="container">
+          <h2 className="visually-hidden">About BDI Landscape | Irrigation</h2>
+          <p>
+            BDI Landscape | Irrigation serves the Dallas-Fort Worth metroplex and surrounding areas with custom landscaping, efficient irrigation systems, and year-round maintenance for residential and commercial properties. We are a licensed irrigation company with over 10 years of experience, rooted in faith and committed to excellence.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="page-section">
+        <div className="container container--wide">
+          <div className="layout-grid">
+            <div className="layout-grid__content">
+              <h2>What We Offer</h2>
+              <ul className="list-with-icons">
+                <li><Leaf size={18} className="list-with-icons__icon" aria-hidden /><span>Custom landscaping design and installation</span></li>
+                <li><Droplets size={18} className="list-with-icons__icon" aria-hidden /><span>Efficient irrigation systems and repairs</span></li>
+                <li><TreePine size={18} className="list-with-icons__icon" aria-hidden /><span>Year-round lawn and landscape maintenance</span></li>
+                <li><Building2 size={18} className="list-with-icons__icon" aria-hidden /><span>Residential and commercial services</span></li>
+              </ul>
+            </div>
+            <div className="layout-grid__media">
+              <Image
+                src="/pic-2.jpg"
+                alt="Landscaping and irrigation work in DFW"
+                width={600}
+                height={450}
+                sizes="(max-width: 767px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container container--wide">
+          <div className="layout-grid layout-grid--reverse">
+            <div className="layout-grid__content">
+              <h2>Trusted in the Dallas–Fort Worth Area</h2>
+              <p>
+                From new installations to ongoing maintenance, we help homeowners and businesses across DFW and surrounding communities keep their properties looking their best.
+              </p>
+            </div>
+            <div className="layout-grid__media">
+              <Image
+                src="/pic-3.jpg"
+                alt="Professional landscaping service in Dallas-Fort Worth"
+                width={600}
+                height={450}
+                sizes="(max-width: 767px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section cta-block">
+        <div className="container container--wide">
+          <h2>Get a Free Estimate</h2>
+          <p>
+            Serving the DFW area and surrounding communities. Contact us for a free estimate on your next landscaping or irrigation project.
+          </p>
+          <p className="cta-phone">
+            <a href={`tel:${PHONE.replace(/-/g, "")}`}>{PHONE}</a>
+          </p>
+          <p>
+            <Link href="/contact" className="link-with-icon">
+              Contact us
+              <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+            </Link>
+            {" "}for more information or to request service.
+          </p>
+          <div className="layout-images" style={{ marginTop: "var(--section)" }}>
+            <Image
+              src="/pic-4.jpg"
+              alt=""
+              width={400}
+              height={300}
+              sizes="50vw"
+            />
+            <Image
+              src="/pic-1.jpg"
+              alt=""
+              width={400}
+              height={300}
+              sizes="50vw"
+            />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
