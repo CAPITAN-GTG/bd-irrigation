@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Leaf, Droplets, TreePine, Building2, ArrowRight } from "lucide-react";
+import { Leaf, Droplets, TreePine, Building2, ArrowRight, Lamp, Sparkles } from "lucide-react";
 import { createPageMetadata } from "@/lib/seo";
+import { ChristmasLightFlyer } from "@/components/ChristmasLightFlyer";
 
 const PHONE = "469-835-4691";
 
@@ -59,6 +60,8 @@ export default function HomePage() {
                 <li><Droplets size={18} className="list-with-icons__icon" aria-hidden /><span>Efficient irrigation systems and repairs</span></li>
                 <li><TreePine size={18} className="list-with-icons__icon" aria-hidden /><span>Year-round lawn and landscape maintenance</span></li>
                 <li><Building2 size={18} className="list-with-icons__icon" aria-hidden /><span>Residential and commercial services</span></li>
+                <li><Lamp size={18} className="list-with-icons__icon" aria-hidden /><span>Landscape lighting for flowerbeds and walkways</span></li>
+                <li><Sparkles size={18} className="list-with-icons__icon" aria-hidden /><span>Christmas light installation on houses</span></li>
               </ul>
             </div>
             <div className="layout-grid__media">
@@ -93,6 +96,38 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container container--wide">
+          <div className="layout-grid">
+            <div className="layout-grid__content">
+              <h2>Landscape Lighting</h2>
+              <p>
+                We do landscape lighting for flowerbeds and walkways. Illuminate your paths, highlight plantings, and add ambiance and safety to your outdoor spaces. Serving the DFW area with professional design and installation.
+              </p>
+            </div>
+            <div className="layout-grid__media">
+              <Image
+                src="/pic-2.jpg"
+                alt="Landscape lighting for flowerbeds and walkways in DFW"
+                width={600}
+                height={450}
+                sizes="(max-width: 767px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container container--wide">
+          <h2>Christmas Light Installation</h2>
+          <p>
+            We offer Christmas light installation on houses throughout the Dallas–Fort Worth area. From rooflines to trees and displays, we handle design, installation, and takedown so you can enjoy the season without the hassle.
+          </p>
+          <ChristmasLightFlyer />
         </div>
       </section>
 

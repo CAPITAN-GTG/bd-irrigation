@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useCallback } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 
@@ -23,8 +24,15 @@ export function Navbar() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="site-logo" onClick={closeDrawer}>
-          BDI Landscape | Irrigation
+        <Link href="/" className="site-logo" onClick={closeDrawer} aria-label="BDI Landscape | Irrigation – Home">
+          <Image
+            src="/BDI Full logo.svg"
+            alt=""
+            width={480}
+            height={126}
+            className="site-logo__img"
+            priority
+          />
         </Link>
 
         <nav className="site-nav site-nav--desktop" aria-label="Main navigation">

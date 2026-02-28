@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Leaf, Droplets, Wrench, ArrowRight } from "lucide-react";
+import { Leaf, Droplets, Wrench, ArrowRight, Lamp, Sparkles } from "lucide-react";
 import { createPageMetadata } from "@/lib/seo";
+import { ChristmasLightFlyer } from "@/components/ChristmasLightFlyer";
 
 const PHONE = "469-835-4691";
 
@@ -63,6 +64,19 @@ export default function ServicesPage() {
               <p>
                 Ongoing maintenance for both residential and commercial properties in the DFW area. From mowing and edging to seasonal cleanups and irrigation checks, we keep your property looking its best year-round.
               </p>
+            </article>
+            <article className="service-card">
+              <h2><Lamp size={20} className="service-card__icon" aria-hidden />Landscape Lighting</h2>
+              <p>
+                We do landscape lighting for flowerbeds and walkways. Illuminate paths, highlight plantings, and add ambiance and safety to your outdoor spaces. Professional design and installation across the Dallas–Fort Worth area.
+              </p>
+            </article>
+            <article className="service-card">
+              <h2><Sparkles size={20} className="service-card__icon" aria-hidden />Christmas Light Installation</h2>
+              <p>
+                We offer Christmas light installation on houses throughout the DFW area. From rooflines to trees and displays, we handle design, installation, and takedown so you can enjoy the season without the hassle.
+              </p>
+              <ChristmasLightFlyer />
             </article>
           </div>
           <div className="services-cta">
