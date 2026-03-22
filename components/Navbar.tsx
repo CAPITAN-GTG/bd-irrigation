@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef, useCallback } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { Menu, X, ChevronRight, Phone } from "lucide-react";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -14,7 +15,15 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const closeDrawer = useCallback(() => {
     menuToggleRef.current?.focus();
@@ -22,37 +31,51 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="site-header">
-      <div className="container site-header__inner">
-        <Link href="/" className="site-logo" onClick={closeDrawer} aria-label="BDI Landscape | Irrigation – Home">
-          <Image
-            src="/BDI Full logo.svg"
-            alt=""
-            width={480}
-            height={126}
-            className="site-logo__img"
-            priority
-          />
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
+      <div className="container container--wide site-header__inner">
+        <Link
+          href="/"
+          className="site-logo"
+          onClick={closeDrawer}
+          aria-label="Big Dawg Irrigation – Home"
+        >
+          <span className="site-logo__frame">
+            <Image
+              src="/BDI Full logo.svg"
+              alt=""
+              fill
+              className="site-logo__img"
+              sizes="(max-width: 767px) 70vw, min(512px, 35vw)"
+              priority
+            />
+          </span>
         </Link>
 
-        <nav className="site-nav site-nav--desktop" aria-label="Main navigation">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link key={href} href={href}>
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <div className="site-header__actions">
+          <nav className="site-nav site-nav--desktop" aria-label="Main navigation">
+            {NAV_LINKS.map(({ href, label }) => (
+              <Link key={href} href={href}>
+                {label}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          ref={menuToggleRef}
-          type="button"
-          className="site-nav__toggle"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-        >
-          <Menu size={24} aria-hidden />
-        </button>
+          <a href={`tel:${PHONE_TEL}`} className="btn btn--primary site-header__cta">
+            <Phone size={18} aria-hidden />
+            Call Now
+          </a>
+
+          <button
+            ref={menuToggleRef}
+            type="button"
+            className="site-nav__toggle"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+          >
+            <Menu size={24} aria-hidden />
+          </button>
+        </div>
       </div>
 
       <div
@@ -90,6 +113,17 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+        <div className="site-nav__drawer-cta">
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="btn btn--primary"
+            style={{ width: "100%" }}
+            onClick={closeDrawer}
+          >
+            <Phone size={18} aria-hidden />
+            Call {PHONE_DISPLAY}
+          </a>
+        </div>
       </nav>
     </header>
   );

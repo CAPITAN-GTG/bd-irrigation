@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { createPageMetadata } from "@/lib/seo";
-
-const PHONE = "469-835-4691";
+import { Reveal } from "@/components/Reveal";
+import { TrustBadges } from "@/components/TrustBadges";
+import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { PHONE_TEL } from "@/lib/constants";
 
 export const metadata = createPageMetadata({
-  title: "About BDI Landscape | Irrigation",
   description:
     "Licensed irrigation company in the Dallas-Fort Worth area since 2023. Over 10 years of experience. Rooted in faith, serving with excellence. Free estimates.",
-  path: "/about",
 });
 
 export default function AboutPage() {
@@ -27,35 +27,53 @@ export default function AboutPage() {
         <div className="hero__overlay" aria-hidden />
         <div className="hero__content">
           <div className="hero__inner">
-            <h1 className="hero__title">About BDI Landscape | Irrigation</h1>
+            <h1 className="hero__title">About Big Dawg Irrigation</h1>
             <p className="hero__tagline">
-              Licensed irrigation company in the DFW area. Over 10 years of experience. Rooted in faith, serving with excellence.
+              Licensed irrigation in the DFW area. Over 10 years of experience. Rooted in faith,
+              serving with excellence.
             </p>
-            <p className="hero__cta">
-              <Link href="/contact" className="hero__cta-link">Get a Free Estimate</Link>
-              <span className="hero__cta-divider">or call</span>
-              <a href={`tel:${PHONE.replace(/-/g, "")}`} className="hero__cta-phone">{PHONE}</a>
-            </p>
+            <div className="hero__cta-row">
+              <Link href="/contact" className="btn btn--primary btn--lg">
+                Get Free Estimate
+              </Link>
+              <a href={`tel:${PHONE_TEL}`} className="btn btn--outline-light btn--lg">
+                Call Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <article className="page-section page-section--lg">
+      <article className="page-section page-section--lg page-section--surface">
         <div className="container">
-          <p>
-            BDI Landscape | Irrigation is a licensed irrigation company serving the Dallas-Fort Worth area and surrounding communities. Founded in 2023, we bring over 10 years of industry experience to every project.
-          </p>
-          <p>
-            We are rooted in faith and committed to serving our customers with excellence. Whether you need custom landscaping, efficient irrigation systems, or year-round maintenance for your residential or commercial property, we provide reliable, professional service across the DFW metroplex.
-          </p>
-          <p>
-            We offer free estimates and stand behind our work.{" "}
-            <Link href="/contact" className="link-with-icon">
-              Contact us
-              <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
-            </Link>{" "}
-            to learn how we can help with your next landscaping or irrigation project in the Dallas-Fort Worth area.
-          </p>
+          <Reveal>
+            <h2>Who we are</h2>
+            <p className="lead">
+              Big Dawg Irrigation is a licensed irrigation company serving the Dallas–Fort
+              Worth area and surrounding communities. Founded in 2023, we bring over 10 years of
+              industry experience to every project.
+            </p>
+            <p className="lead">
+              We are rooted in faith and committed to serving our customers with excellence. Whether
+              you need custom landscaping, efficient irrigation systems, or year-round maintenance
+              for your residential or commercial property, we provide reliable, professional
+              service across the DFW metroplex.
+            </p>
+            <p className="lead">
+              We offer free estimates and stand behind our work.{" "}
+              <Link href="/contact" className="link-with-icon">
+                Contact us
+                <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+              </Link>{" "}
+              to learn how we can help with your next landscaping or irrigation project.
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <TrustBadges />
+          </Reveal>
+          <Reveal delay={0.12}>
+            <ExperienceTimeline />
+          </Reveal>
         </div>
       </article>
     </>

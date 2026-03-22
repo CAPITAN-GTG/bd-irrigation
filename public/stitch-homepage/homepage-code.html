@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AquaSmart | Intelligent Irrigation Systems</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0df259",
+              "background-light": "#f5f8f6",
+              "background-dark": "#102216",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<div class="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+<div class="flex items-center justify-center rounded-lg bg-primary p-1.5">
+<span class="material-symbols-outlined text-background-dark font-bold">water_drop</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">AquaSmart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Design</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[100px] items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark text-sm font-bold transition-transform hover:scale-105 active:scale-95">
+                    Get Started
+                </button>
+<div class="size-10 rounded-full border border-primary/20 bg-cover bg-center" data-alt="Professional user profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQP76eDfmjKQw66X9mNLKV8QcQrwWlHE-Xj_PYECF4o7a4m_aCxmY1gN5NekK1lQFAzIGqWFxZN7FVXTZqvuNRC5JnZUNCi8e8PAECZLpHJjOG1L6WW07ABJUYI05xAE7RZrDvrbDRO-Xdve2mnJN4LLsVu1TGTO-zAdATgyi9NJPCZHuR4ohWpHTV4WyaQAxN8fo0j2tidTtQwi1VostDwQuJyirvELFy0a-YFea7WrOphZivDIWONWuoTdiXHcXYv6BbHGa70_Q")'>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="mx-auto max-w-[1200px] px-6 py-12 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="space-y-4">
+<span class="inline-block px-3 py-1 text-xs font-bold tracking-wider uppercase bg-primary/20 text-primary rounded-full">Next-Gen Irrigation</span>
+<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+                            Intelligence for your <span class="text-primary">garden.</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-[500px]">
+                            Experience the future of landscaping with AI-driven controllers designed for the world's most beautiful estates.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[160px] items-center justify-center rounded-xl h-14 px-8 bg-primary text-background-dark text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                            Shop Systems
+                        </button>
+<button class="flex min-w-[160px] items-center justify-center rounded-xl h-14 px-8 border-2 border-primary text-slate-900 dark:text-slate-100 text-base font-bold hover:bg-primary/5 transition-all">
+                            View Demo
+                        </button>
+</div>
+<div class="flex items-center gap-6 pt-4 border-t border-primary/10">
+<div class="flex -space-x-3">
+<div class="size-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 bg-cover" data-alt="Satisfied customer face" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGTh9K1nA2ztTMFB4VHfM9m_Iw2YORT_2Z4uezMy1KM74zLd6LT00od7kzDU8KuxQSFBXbkk6yhGlCMRuz1jmWTpLOzbNwT8taqsJEIhMa9dtwFVbrGY5-duy_5M8p_HNfYzchAvI9fLopArF1p-p8y7PPmrgYUD9k-LKEM90_lgNr6sCgPKKeSsZVAzIKIZb2HnFH5t3sd9S_cMaE4np9b9OG8K6IzZhN89mDM5XfIAXrx4VOY4zmp7xoPchCEx8ae2qAV46paOE')"></div>
+<div class="size-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 bg-cover" data-alt="Happy homeowner portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRZ5JY-yuoGD2x0uP8oUqkdX_75-6TQfsQQLwCPqLqVrc17wFhxraoEqfnbQi97T9-ieaBNFJSSaecdaAALUiOdUSDgGMzrFmumssz274JYk-G9QdJdX6ihlR31Sx-99ei99fu1acdpmUEEVbakn3TCA5hoJHFLlR5bRl_oyKYQwj4UiRS0pms6T7_naV-AjKoBYAVM8RkdK_FI97v1LMl6r6XtX53mvc8VNWnyVJVaBbNOVI-CQa0qZSgFiLzR6C_TrmEWk2uJbY')"></div>
+<div class="size-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 flex items-center justify-center text-[10px] font-bold bg-primary text-background-dark">+2k</div>
+</div>
+<p class="text-sm font-medium text-slate-500">Trusted by landscape architects worldwide</p>
+</div>
+</div>
+<div class="relative order-1 lg:order-2">
+<div class="aspect-square w-full rounded-[2rem] overflow-hidden shadow-2xl relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-background-dark/40 to-transparent z-10"></div>
+<img alt="Luxury garden with smart sprinklers" class="h-full w-full object-cover transform hover:scale-105 transition-transform duration-700" data-alt="Lush green garden with modern smart irrigation technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdcd6-FifACBPnrlqHYgmdDGov7YdvwFudTulCXHT59SnqD2ERJLHz2U8Pz1_iYOT1q6W0ghyxKOPNriNQdgOurK_DUKtINZfCquRKlLbGZLM5RtC8YFoWEjxrdDAayIvl6cyttUit_agL3g5Zp_-uAdkVqOZ_dfLq8WICuyZWS-lmD72v_CGOaTlLOIktsm5j1pnL9f75n-tR0mlIEIlmFrWZ0TVT_c2UN1QFxvZ0iD_L8kJQ4GY0Tnta-OqoLXGheziymviytAk"/>
+</div>
+<div class="absolute -bottom-6 -left-6 md:-left-12 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl z-20 max-w-[240px] border border-primary/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">eco</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-tighter">Water Saved</span>
+</div>
+<div class="text-3xl font-bold">14,200L</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full mt-3">
+<div class="bg-primary h-full rounded-full w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Propositions -->
+<section class="bg-slate-50 dark:bg-background-dark/50 py-24 border-y border-primary/5">
+<div class="mx-auto max-w-[1200px] px-6">
+<div class="mb-16 max-w-[600px]">
+<h2 class="text-4xl font-bold tracking-tight mb-4">Precision Watering</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400">
+                        Our technology ensures every drop counts, balancing ecological responsibility with stunning landscape results.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Efficiency -->
+<div class="group p-8 rounded-3xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-3xl">opacity</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Efficiency</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Save up to 50% more water compared to traditional systems with real-time weather adjustments and predictive AI.
+                        </p>
+</div>
+<!-- Control -->
+<div class="group p-8 rounded-3xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-3xl">settings_remote</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Control</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Manage your entire landscape from anywhere in the world using our intuitive, beautifully designed mobile app.
+                        </p>
+</div>
+<!-- Beauty -->
+<div class="group p-8 rounded-3xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Beauty</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Keep your plants thriving and vibrant with personalized hydration schedules tailored to every unique species in your yard.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Showcase -->
+<section class="mx-auto max-w-[1200px] px-6 py-24">
+<div class="relative overflow-hidden rounded-[2.5rem] bg-slate-900 dark:bg-slate-800 p-8 md:p-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The Smart Controller</h2>
+<p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                            Sleek design meets industrial-grade power. The AquaSmart Hub Pro features a weather-resistant aluminum casing and an edge-to-edge touch interface.
+                        </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Multi-zone management (up to 32 zones)</span>
+</li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Hyper-local weather station integration</span>
+</li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Smart home ready (Alexa, Google, HomeKit)</span>
+</li>
+</ul>
+<button class="bg-primary text-background-dark px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform">
+                            Pre-order Hub Pro
+                        </button>
+</div>
+<div class="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-cover bg-center" data-alt="Close up of a modern sleek smart home irrigation control panel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDA_ESCZV5zmaUScZL5XpPUt2CcjeP-kYnKy9QkbI-r2lAFj-8v07GDcz6xAN4xSDZMKP2srQfpBXQytNAjDAKGVOvzQJEZ1HnZSFpEjrxLdM1ijI661D9jDO1r2GMovKCi-TnSaa7Qe1eI_JDVCcD-IBN_QmJb1r5LMTaW4VJ_1MzW5KQa8lfXL_ZlaIJfkixotY1xflkIpUjEvUe2YP9KqOFqAZBPvrTNN3HpG2IfI0snL59PN0g_r9vTcIsm9dodXxyIrOLn3w')">
+</div>
+</div>
+<!-- Abstract Background Elements -->
+<div class="absolute -top-24 -right-24 size-96 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-24 -left-24 size-64 bg-primary/10 rounded-full blur-[80px]"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400 py-16">
+<div class="mx-auto max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-white mb-6">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+<h2 class="text-xl font-bold tracking-tight">AquaSmart</h2>
+</div>
+<p class="text-sm leading-relaxed">
+                    Pioneering the future of sustainable landscape management through intelligence and design.
+                </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Solutions</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Residential</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Commercial</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Public Spaces</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Smart Cities</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Company</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Our Mission</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Newsletter</h4>
+<p class="text-xs mb-4">Stay updated with the latest in smart irrigation.</p>
+<div class="flex gap-2">
+<input class="bg-slate-800 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary text-background-dark p-2 rounded-lg">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-[1200px] px-6 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs">© 2024 AquaSmart Inc. All rights reserved.</p>
+<div class="flex gap-6 text-xs">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+<a class="hover:text-white" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

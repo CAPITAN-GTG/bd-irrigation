@@ -1,0 +1,24 @@
+{
+  "screen": {
+    "name": "projects/3030853490396925293/screens/04de22e9a3ea4383aee03ed18ac759b2",
+    "title": "Homepage",
+    "screenshot": {
+      "name": "projects/3030853490396925293/files/04adeb1f6b024e81a7579e4adf2129f0",
+      "downloadUrl": "https://lh3.googleusercontent.com/aida/AOfcidVbYvTgnTritG-g_FS05SdjRv_FPuBLAP3cczq0pf5H3xqu338M4Q5haeAuIUD1t2e69NtvkcZdo4lYt_RkBf-_0U2wfACcu4Z3ClM6ZlWtt4C1wxF_Nm-iv1W1CgnS7hckuDdLJld3fz9v9m69CSztBRD0N7UIEXFNehjJNW8QsHubGXFJqBRz_LdpI5mYYID3irxwXVagGS3lu17na4iBplcH-QEO9F3954_T3dhOmBouwBq8BoukqFk"
+    },
+    "htmlCode": {
+      "name": "projects/3030853490396925293/files/9c0faf079cab4e4fb97e7bf292323076",
+      "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2I2OThmNTAyOWIyYjQ3MGM5YzA1NWY4NGVjMWFhM2YzEgsSBxCO5v2OjwcYAZIBIwoKcHJvamVjdF9pZBIVQhMzMDMwODUzNDkwMzk2OTI1Mjkz&filename=&opi=89354086",
+      "mimeType": "text/html"
+    },
+    "width": "2560",
+    "height": "5388",
+    "deviceType": "DESKTOP"
+  },
+  "rawContent": [
+    {
+      "text": "{\"name\":\"projects/3030853490396925293/screens/04de22e9a3ea4383aee03ed18ac759b2\",\"title\":\"Homepage\",\"screenshot\":{\"name\":\"projects/3030853490396925293/files/04adeb1f6b024e81a7579e4adf2129f0\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AOfcidVbYvTgnTritG-g_FS05SdjRv_FPuBLAP3cczq0pf5H3xqu338M4Q5haeAuIUD1t2e69NtvkcZdo4lYt_RkBf-_0U2wfACcu4Z3ClM6ZlWtt4C1wxF_Nm-iv1W1CgnS7hckuDdLJld3fz9v9m69CSztBRD0N7UIEXFNehjJNW8QsHubGXFJqBRz_LdpI5mYYID3irxwXVagGS3lu17na4iBplcH-QEO9F3954_T3dhOmBouwBq8BoukqFk\"},\"htmlCode\":{\"name\":\"projects/3030853490396925293/files/9c0faf079cab4e4fb97e7bf292323076\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2I2OThmNTAyOWIyYjQ3MGM5YzA1NWY4NGVjMWFhM2YzEgsSBxCO5v2OjwcYAZIBIwoKcHJvamVjdF9pZBIVQhMzMDMwODUzNDkwMzk2OTI1Mjkz&filename=&opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"5388\",\"deviceType\":\"DESKTOP\"}",
+      "type": "text"
+    }
+  ]
+}

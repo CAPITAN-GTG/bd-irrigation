@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { createPageMetadata, SITE_NAME, DEFAULT_DESCRIPTION } from "@/lib/seo";
+import { LenisProvider } from "@/components/providers/LenisProvider";
+import { ToastProvider } from "@/components/ToastProvider";
+import { createPageMetadata, DEFAULT_DESCRIPTION } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,7 +20,6 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = createPageMetadata({
-  title: SITE_NAME,
   description: DEFAULT_DESCRIPTION,
 });
 
@@ -30,9 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LenisProvider>
+          <ToastProvider />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
