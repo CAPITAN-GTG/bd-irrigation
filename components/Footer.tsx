@@ -37,6 +37,9 @@ export function Footer() {
           <Link href="/services" className="footer__link">
             Services
           </Link>
+          <Link href="/gallery" className="footer__link">
+            Gallery
+          </Link>
           <Link href="/contact" className="footer__link">
             Contact
           </Link>

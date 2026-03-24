@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <>
       <section className="hero">
         <Image
-          src="/pic-6.jpg"
+          src="/services-image.jpg"
           alt=""
           fill
           className="hero__image"

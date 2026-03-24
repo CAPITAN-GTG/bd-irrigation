@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <section className="hero">
         <Image
-          src="/pic-2.jpg"
+          src="/about-image.jpg"
           alt=""
           fill
           className="hero__image"

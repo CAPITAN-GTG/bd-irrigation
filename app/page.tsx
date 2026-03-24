@@ -29,7 +29,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <Image
-          src="/pic-5.jpg"
+          src="/fronpage-image.jpg"
           alt=""
           fill
           className="hero__image"
@@ -83,6 +83,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section
+        className="page-section page-section--surface"
+        aria-labelledby="gallery-teaser-heading"
+      >
+        <div className="container container--wide">
+          <Reveal>
+            <div className="gallery-teaser">
+              <div className="gallery-teaser__intro">
+                <h2 id="gallery-teaser-heading" className="gallery-teaser__title">
+                  See our work
+                </h2>
+                <p className="gallery-teaser__text">
+                  Browse a full gallery of landscaping, irrigation, and outdoor projects across
+                  DFW—optimized for quick loading on any device.
+                </p>
+                <Link href="/gallery" className="link-with-icon">
+                  Open project gallery
+                  <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+                </Link>
+              </div>
+              <Link
+                href="/gallery"
+                className="gallery-teaser__shots"
+                aria-label="View project gallery — sample photos"
+              >
+                <span className="gallery-teaser__shot">
+                  <Image
+                    src="/pic-5.webp"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 767px) 33vw, 200px"
+                    loading="lazy"
+                    quality={65}
+                  />
+                </span>
+                <span className="gallery-teaser__shot">
+                  <Image
+                    src="/pic-6.webp"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 767px) 33vw, 200px"
+                    loading="lazy"
+                    quality={65}
+                  />
+                </span>
+                <span className="gallery-teaser__shot">
+                  <Image
+                    src="/pic-7.webp"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 767px) 33vw, 200px"
+                    loading="lazy"
+                    quality={65}
+                  />
+                </span>
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="page-section page-section--muted">
         <div className="container container--wide">
           <Reveal>
@@ -131,13 +195,13 @@ export default function HomePage() {
                   containerClassName="!py-0 w-full max-w-none"
                   className="w-full max-w-full"
                 >
-                  <CardBody className="!h-auto !w-full max-w-full aspect-[4/3] rounded-2xl shadow-[var(--shadow-lg)] ring-1 ring-[var(--color-border)]">
+                  <CardBody className="!h-auto !w-full max-w-full aspect-[4/3] shadow-[var(--shadow-lg)] ring-1 ring-[var(--color-border)]">
                     <CardItem
                       translateZ={50}
-                      className="relative h-full min-h-[200px] w-full overflow-hidden rounded-2xl"
+                      className="relative h-full min-h-[200px] w-full overflow-hidden"
                     >
                       <Image
-                        src="/pic-2.jpg"
+                        src="/pic-2.webp"
                         alt="Landscaping and irrigation work in DFW"
                         fill
                         className="object-cover"
@@ -175,7 +239,7 @@ export default function HomePage() {
               </div>
               <div className="layout-grid__media layout-grid__media--lift">
                 <Image
-                  src="/pic-3.jpg"
+                  src="/pic-9.webp"
                   alt="Professional landscaping service in Dallas-Fort Worth"
                   width={600}
                   height={450}
@@ -202,7 +266,7 @@ export default function HomePage() {
               </div>
               <div className="layout-grid__media layout-grid__media--lift">
                 <Image
-                  src="/pic-2.jpg"
+                  src="/pic-14.webp"
                   alt="Landscape lighting for flowerbeds and walkways in DFW"
                   width={600}
                   height={450}
@@ -266,7 +330,7 @@ export default function HomePage() {
               <div className="layout-images" style={{ marginTop: "var(--gap-xl)" }}>
                 <div className="layout-images__cell">
                   <Image
-                    src="/pic-4.jpg"
+                    src="/pic-21.webp"
                     alt=""
                     width={400}
                     height={300}
@@ -275,7 +339,7 @@ export default function HomePage() {
                 </div>
                 <div className="layout-images__cell">
                   <Image
-                    src="/pic-1.jpg"
+                    src="/pic-28.webp"
                     alt=""
                     width={400}
                     height={300}

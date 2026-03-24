@@ -16,7 +16,7 @@ export default function ContactPage() {
     <>
       <section className="hero">
         <Image
-          src="/pic-7.jpg"
+          src="/contact-image.jpg"
           alt=""
           fill
           className="hero__image"
