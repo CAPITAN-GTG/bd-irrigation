@@ -14,23 +14,18 @@ export const metadata = createPageMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero--simple hero--compact">
         <Image
           src="/services-image.jpg"
-          alt=""
+          alt="Landscaping and irrigation services in the Dallas–Fort Worth area"
           fill
           className="hero__image"
           sizes="100vw"
           priority
         />
-        <div className="hero__overlay" aria-hidden />
         <div className="hero__content">
-          <div className="hero__inner">
-            <h1 className="hero__title">Landscaping & Irrigation Services in DFW</h1>
-            <p className="hero__tagline">
-              Custom landscaping, efficient irrigation, and year-round maintenance for residential
-              and commercial properties across the Dallas–Fort Worth area.
-            </p>
+          <div className="hero__copy hero__inner">
+            <h1 className="hero__title hero__title--simple">Services</h1>
             <div className="hero__cta-row">
               <Link href="/contact" className="btn btn--primary btn--lg">
                 Get Free Estimate
@@ -43,9 +38,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="page-section page-section--lg page-section--muted">
-        <div className="container container--wide">
+      <section className="page-section page-section--lg page-section--surface home-intro">
+        <div className="container container--home">
           <Reveal>
+            <div className="section-eyebrow">
+              <span className="section-eyebrow__dot" aria-hidden />
+              What we offer
+            </div>
             <p className="services-intro">
               Big Dawg Irrigation provides custom landscaping, efficient irrigation systems,
               and year-round maintenance for residential and commercial properties across the

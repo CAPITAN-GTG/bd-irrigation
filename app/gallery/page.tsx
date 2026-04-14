@@ -1,5 +1,6 @@
 import { createPageMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
+import { GalleryImagePreloader } from "@/components/GalleryImagePreloader";
 import { GalleryView } from "@/components/GalleryView";
 import { GALLERY_IMAGE_PATHS } from "@/lib/gallery-images";
 
@@ -16,6 +17,7 @@ export default function GalleryPage() {
 
   return (
     <>
+      <GalleryImagePreloader paths={GALLERY_IMAGE_PATHS} />
       <section
         className="page-section page-section--lg page-section--surface gallery-page"
         aria-labelledby="gallery-heading"

@@ -60,7 +60,7 @@ export function ChristmasLightsBand() {
           </Link>
           <a
             href={`tel:${PHONE_TEL}`}
-            className="home-seasonal-band__btn home-seasonal-band__btn--outline"
+            className="home-seasonal-band__btn home-seasonal-band__btn--call"
           >
             <Phone size={18} aria-hidden />
             {PHONE_DISPLAY}

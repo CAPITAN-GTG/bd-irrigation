@@ -30,7 +30,6 @@ export function GalleryView({
   const railRef = useRef<HTMLDivElement>(null);
 
   const safeImages = useMemo(() => images.filter(Boolean), [images]);
-  if (safeImages.length === 0) return null;
 
   const close = useCallback(() => setOpenIndex(null), []);
 
@@ -72,6 +71,10 @@ export function GalleryView({
     el.scrollBy({ left: delta, behavior: "smooth" });
   }, []);
 
+  if (safeImages.length === 0) {
+    return null;
+  }
+
   return (
     <>
       {layout === "grid" ? (
@@ -91,7 +94,7 @@ export function GalleryView({
                     fill
                     className="gallery-grid__img"
                     sizes={thumbSizes}
-                    loading={index < 8 ? "eager" : "lazy"}
+                    loading="eager"
                     quality={75}
                     decoding="async"
                   />
@@ -141,8 +144,8 @@ export function GalleryView({
                       alt=""
                       fill
                       className="gallery-rail__img"
-                      sizes={thumbSizes}
-                      loading={index < 6 ? "eager" : "lazy"}
+                                           sizes={thumbSizes}
+                      loading="eager"
                       quality={75}
                       decoding="async"
                     />

@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
 import { TrustBadges } from "@/components/TrustBadges";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
-import { PHONE_TEL } from "@/lib/constants";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
 
 export const metadata = createPageMetadata({
   description:
@@ -15,23 +15,18 @@ export const metadata = createPageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero--simple hero--compact">
         <Image
           src="/about-image.jpg"
-          alt=""
+          alt="Landscaping and irrigation team serving Dallas–Fort Worth"
           fill
           className="hero__image"
           sizes="100vw"
           priority
         />
-        <div className="hero__overlay" aria-hidden />
         <div className="hero__content">
-          <div className="hero__inner">
-            <h1 className="hero__title">About Big Dawg Irrigation</h1>
-            <p className="hero__tagline">
-              Licensed irrigation in the DFW area. Over 10 years of experience. Rooted in faith,
-              serving with excellence.
-            </p>
+          <div className="hero__copy hero__inner">
+            <h1 className="hero__title hero__title--simple">About Big Dawg Irrigation</h1>
             <div className="hero__cta-row">
               <Link href="/contact" className="btn btn--primary btn--lg">
                 Get Free Estimate
@@ -44,10 +39,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <article className="page-section page-section--lg page-section--surface">
-        <div className="container">
+      <article className="page-section page-section--lg page-section--surface home-intro">
+        <div className="container container--home">
           <Reveal>
-            <h2>Who we are</h2>
+            <div className="section-eyebrow">
+              <span className="section-eyebrow__dot" aria-hidden />
+              Who we are
+            </div>
+            <h2>Our story</h2>
             <p className="lead">
               Big Dawg Irrigation is a licensed irrigation company serving the Dallas–Fort
               Worth area and surrounding communities. Founded in 2023, we bring over 10 years of
