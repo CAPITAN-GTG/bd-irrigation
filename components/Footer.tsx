@@ -2,49 +2,61 @@ import Link from "next/link";
 import { Phone, Mail, ExternalLink } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/lib/constants";
 
+const FOOTER_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer__container">
-        <div className="footer__brand-block">
-          <p className="footer__brand">Big Dawg Irrigation</p>
-          <p className="footer__tagline">
-            Serving the DFW area and surrounding communities with licensed irrigation,
-            landscaping, and dependable outdoor care.
-          </p>
+      <div className="footer__top-accent" aria-hidden />
+      <div className="footer__inner">
+        <div className="footer__grid">
+          <div className="footer__brand-col">
+            <p className="footer__brand">Big Dawg Irrigation</p>
+            <p className="footer__tagline">
+              Licensed irrigation, landscaping, and dependable outdoor care for homes and
+              businesses across Dallas–Fort Worth.
+            </p>
+            <div className="footer__cta">
+              <Link href="/contact" className="footer__cta-pill">
+                Request a free estimate
+              </Link>
+            </div>
+          </div>
+          <div className="footer__col">
+            <p className="footer__heading">Navigate</p>
+            <nav className="footer__nav-stack" aria-label="Footer navigation">
+              {FOOTER_LINKS.map(({ href, label }) => (
+                <Link key={href} href={href}>
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="footer__col">
+            <p className="footer__heading">Contact</p>
+            <ul className="footer__contact-list">
+              <li>
+                <a href={`tel:${PHONE_TEL}`}>
+                  <Phone size={18} className="footer__contact-icon" aria-hidden />
+                  <span>{PHONE_DISPLAY}</span>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${EMAIL}`}>
+                  <Mail size={18} className="footer__contact-icon" aria-hidden />
+                  <span>{EMAIL}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="footer__contact">
-          <p className="footer__contact-item">
-            <a href={`tel:${PHONE_TEL}`} className="footer__link">
-              <Phone size={16} aria-hidden />
-              {PHONE_DISPLAY}
-            </a>
-          </p>
-          <p className="footer__contact-item">
-            <a href={`mailto:${EMAIL}`} className="footer__link">
-              <Mail size={16} aria-hidden />
-              {EMAIL}
-            </a>
-          </p>
-        </div>
-        <nav className="footer__nav" aria-label="Footer navigation">
-          <Link href="/" className="footer__link">
-            Home
-          </Link>
-          <Link href="/about" className="footer__link">
-            About
-          </Link>
-          <Link href="/services" className="footer__link">
-            Services
-          </Link>
-          <Link href="/gallery" className="footer__link">
-            Gallery
-          </Link>
-          <Link href="/contact" className="footer__link">
-            Contact
-          </Link>
-        </nav>
-        <div className="footer__copy-row">
+        <div className="footer__legal">
           <p className="footer__copy">
             &copy; {new Date().getFullYear()} Big Dawg Irrigation. All rights reserved.
           </p>

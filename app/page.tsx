@@ -1,22 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Leaf,
-  Droplets,
-  TreePine,
-  Building2,
-  ArrowRight,
-  Lamp,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { createPageMetadata } from "@/lib/seo";
-import { ChristmasLightFlyer } from "@/components/ChristmasLightFlyer";
+import { ChristmasLightsBand } from "@/components/ChristmasLightsBand";
+import { HomeServicesCarousel } from "@/components/HomeServicesCarousel";
+import { ParallaxSlashFigure } from "@/components/ParallaxSlashFigure";
 import { Reveal } from "@/components/Reveal";
-import {
-  CardBody,
-  CardContainer,
-  CardItem,
-} from "@/components/ui/3d-card";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
 
 export const metadata = createPageMetadata({
@@ -27,25 +16,28 @@ export const metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero--simple">
         <Image
           src="/fronpage-image.jpg"
-          alt=""
+          alt="Landscaped property with healthy lawn and irrigation in the Dallas–Fort Worth area"
           fill
           className="hero__image"
           sizes="100vw"
           priority
         />
-        <div className="hero__overlay" aria-hidden />
         <div className="hero__content">
-          <div className="hero__inner">
-            <h1 className="hero__title">
-              Landscaping, irrigation & outdoor care for DFW properties
-            </h1>
+          <div className="hero__copy hero__inner">
+            <p className="hero__eyebrow">DFW · Landscape &amp; irrigation</p>
+            <h1 className="hero__title">Landscaping &amp; irrigation built for North Texas</h1>
             <p className="hero__tagline">
-              Licensed irrigation and year-round maintenance for residential and commercial
-              properties. Thoughtful design, efficient systems, and crews you can trust.
+              Licensed crews, efficient systems, and outdoor care you can count on—homes and
+              businesses welcome.
             </p>
+            <ul className="hero__stat-chips" aria-label="Service highlights">
+              <li>Licensed irrigation</li>
+              <li>10+ yrs · DFW</li>
+              <li>Res. &amp; commercial</li>
+            </ul>
             <div className="hero__cta-row">
               <Link href="/contact" className="btn btn--primary btn--lg">
                 Get Free Estimate
@@ -57,88 +49,215 @@ export default function HomePage() {
             <p className="hero__cta-meta">
               <span>Free estimates</span>
               <span className="hero__cta-divider">·</span>
-              <span>Serving Dallas–Fort Worth</span>
+              <span>Dallas–Fort Worth</span>
             </p>
           </div>
         </div>
       </section>
 
-      <section className="intro-band page-section--surface" aria-labelledby="intro-heading">
-        <div className="container">
-          <div className="intro-band__inner">
-            <div className="intro-band__accent" aria-hidden />
+      <section
+        className="page-section page-section--surface home-intro"
+        aria-labelledby="intro-heading"
+      >
+        <div className="container container--home">
+          <div className="home-intro__grid">
             <div>
-              <h2 id="intro-heading" className="visually-hidden">
-                About Big Dawg Irrigation
-              </h2>
-              <p className="intro-band__text">
-                <strong>Big Dawg Irrigation</strong>{" "}
-                serves the Dallas–Fort Worth metroplex with custom landscaping, efficient
+              <div className="section-eyebrow">
+                <span className="section-eyebrow__dot" aria-hidden />
+                Who we are
+              </div>
+              <h2 id="intro-heading">Big Dawg Irrigation</h2>
+              <p className="home-section__lead">
+                We serve the Dallas–Fort Worth metroplex with custom landscaping, efficient
                 irrigation, and year-round maintenance. We are a licensed irrigation company with
                 over 10 years of experience—rooted in faith and committed to excellence on every
                 property we touch.
               </p>
+              <p className="home-intro__cta">
+                <Link href="/about" className="link-with-icon">
+                  Read our story
+                  <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+                </Link>
+              </p>
             </div>
+            <aside className="home-intro__aside" aria-label="Company highlights">
+              <div className="home-intro__stat">
+                <span className="home-intro__stat-value">10+</span>
+                <p className="home-intro__stat-label">Years serving DFW homeowners and businesses</p>
+              </div>
+              <div className="home-intro__stat">
+                <span className="home-intro__stat-value">Licensed</span>
+                <p className="home-intro__stat-label">Irrigation work done to code, start to finish</p>
+              </div>
+              <div className="home-intro__stat">
+                <span className="home-intro__stat-value">Full-service</span>
+                <p className="home-intro__stat-label">Design, install, lighting, and seasonal care</p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section
-        className="page-section page-section--surface"
-        aria-labelledby="gallery-teaser-heading"
-      >
-        <div className="container container--wide">
-          <Reveal>
-            <div className="gallery-teaser">
-              <div className="gallery-teaser__intro">
-                <h2 id="gallery-teaser-heading" className="gallery-teaser__title">
-                  See our work
-                </h2>
-                <p className="gallery-teaser__text">
-                  Browse a full gallery of landscaping, irrigation, and outdoor projects across
-                  DFW—optimized for quick loading on any device.
+      <section className="page-section home-offerings-dark" aria-labelledby="offerings-heading">
+        <Reveal>
+          <header className="home-offerings-dark__head home-section__head home-section__head--center">
+            <div className="section-eyebrow">
+              <span className="section-eyebrow__dot" aria-hidden />
+              What we do
+            </div>
+            <h2 id="offerings-heading">Services that cover your whole property</h2>
+            <p className="home-section__lead">
+              Hover a card to see the service—full-width carousel, real project photos.
+            </p>
+          </header>
+        </Reveal>
+        <HomeServicesCarousel />
+        <Reveal>
+          <p className="home-offerings-dark__foot">
+            <Link href="/services" className="link-with-icon">
+              Explore all services
+              <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+            </Link>
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="home-trust-slash" aria-labelledby="trust-heading">
+        <div className="home-trust-slash__grid">
+          <div className="home-trust-slash__copy">
+            <Reveal>
+              <div className="home-trust-slash__copy-inner">
+                <div className="section-eyebrow">
+                  <span className="section-eyebrow__dot" aria-hidden />
+                  Local trust
+                </div>
+                <h2 id="trust-heading">Trusted in Dallas–Fort Worth</h2>
+                <p className="home-trust-slash__lead">
+                  From new installations to ongoing maintenance, we help homeowners and businesses
+                  across DFW keep their properties looking sharp—without the stress.
                 </p>
-                <Link href="/gallery" className="link-with-icon">
-                  Open project gallery
-                  <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
-                </Link>
+                <p className="home-trust-slash__link-wrap">
+                  <Link href="/about" className="link-with-icon">
+                    Our story &amp; credentials
+                    <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+                  </Link>
+                </p>
+              </div>
+            </Reveal>
+          </div>
+          <ParallaxSlashFigure
+            src="/pic-31.webp"
+            alt="Professional landscaping service in Dallas-Fort Worth"
+            figureClassName="home-trust-slash__figure-wrap"
+            imgClassName="home-trust-slash__img object-cover"
+            sizes="(max-width: 767px) 100vw, 50vw"
+            loading="lazy"
+            strength={24}
+          />
+        </div>
+      </section>
+
+      <section className="home-lighting-slash" aria-labelledby="lighting-heading">
+        <div className="home-lighting-slash__grid">
+          <ParallaxSlashFigure
+            src="/pic-25.webp"
+            alt="Landscape lighting for flowerbeds and walkways in DFW"
+            figureClassName="home-lighting-slash__figure-wrap"
+            imgClassName="home-lighting-slash__img object-cover"
+            sizes="(max-width: 767px) 100vw, 50vw"
+            loading="lazy"
+            strength={24}
+          />
+          <div className="home-lighting-slash__copy">
+            <Reveal>
+              <div className="home-lighting-slash__copy-inner">
+                <div className="section-eyebrow">
+                  <span className="section-eyebrow__dot" aria-hidden />
+                  Outdoor living
+                </div>
+                <h2 id="lighting-heading">Landscape lighting</h2>
+                <p className="home-lighting-slash__lead">
+                  Illuminate paths, highlight plantings, and add ambiance and safety to your outdoor
+                  spaces with professional design and installation.
+                </p>
+                <p className="home-lighting-slash__link-wrap">
+                  <Link href="/services" className="link-with-icon">
+                    See lighting options
+                    <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+                  </Link>
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section page-section--seasonal" aria-labelledby="seasonal-heading">
+        <Reveal>
+          <ChristmasLightsBand />
+        </Reveal>
+      </section>
+
+      <section className="page-section home-work-showcase" aria-labelledby="gallery-teaser-heading">
+        <div className="container container--home">
+          <Reveal>
+            <div className="home-gallery-mosaic">
+              <div className="home-gallery-mosaic__intro">
+                <div className="home-gallery-mosaic__intro-card">
+                  <div className="section-eyebrow">
+                    <span className="section-eyebrow__dot" aria-hidden />
+                    Portfolio
+                  </div>
+                  <h2 id="gallery-teaser-heading" className="home-gallery-mosaic__title">
+                    See our work
+                  </h2>
+                  <p className="home-gallery-mosaic__text">
+                    Landscaping, irrigation, and outdoor projects across DFW—real installs, real
+                    curb appeal.
+                  </p>
+                  <Link href="/gallery" className="btn btn--primary home-gallery-mosaic__cta">
+                    Open full gallery
+                    <ArrowRight size={18} className="home-gallery-mosaic__cta-icon" aria-hidden />
+                  </Link>
+                </div>
               </div>
               <Link
                 href="/gallery"
-                className="gallery-teaser__shots"
-                aria-label="View project gallery — sample photos"
+                className="home-gallery-mosaic__grid"
+                aria-label="View project gallery — featured photos"
               >
-                <span className="gallery-teaser__shot">
+                <span className="home-gallery-mosaic__cell home-gallery-mosaic__cell--hero">
                   <Image
                     src="/pic-5.webp"
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 767px) 33vw, 200px"
+                    sizes="(max-width: 767px) 50vw, 400px"
                     loading="lazy"
-                    quality={65}
+                    quality={70}
                   />
+                  <span className="home-gallery-mosaic__cell-label">Projects</span>
                 </span>
-                <span className="gallery-teaser__shot">
+                <span className="home-gallery-mosaic__cell">
                   <Image
                     src="/pic-6.webp"
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 767px) 33vw, 200px"
+                    sizes="(max-width: 767px) 50vw, 200px"
                     loading="lazy"
-                    quality={65}
+                    quality={70}
                   />
                 </span>
-                <span className="gallery-teaser__shot">
+                <span className="home-gallery-mosaic__cell">
                   <Image
                     src="/pic-7.webp"
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 767px) 33vw, 200px"
+                    sizes="(max-width: 767px) 50vw, 200px"
                     loading="lazy"
-                    quality={65}
+                    quality={70}
                   />
                 </span>
               </Link>
@@ -147,204 +266,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section page-section--muted">
-        <div className="container container--wide">
+      <section className="page-section home-estimate" aria-labelledby="estimate-heading">
+        <div className="container container--home">
           <Reveal>
-            <div className="section-eyebrow">
-              <span className="section-eyebrow__dot" aria-hidden />
-              What we do
-            </div>
-            <div className="layout-grid">
-              <div className="layout-grid__content">
-                <div className="layout-grid__panel">
-                  <h2>What We Offer</h2>
-                  <p className="lead">
-                    From design to drip lines and seasonal cleanups, we keep outdoor spaces
-                    healthy, efficient, and beautiful.
+            <div className="home-estimate__card">
+              <div className="home-estimate__layout">
+                <div className="home-estimate__copy">
+                  <p className="home-estimate__eyebrow">Next steps</p>
+                  <h2 id="estimate-heading">Ready for a free estimate?</h2>
+                  <p className="home-estimate__lead">
+                    Spots fill quickly during peak seasons. Call or message us—we&apos;ll follow up
+                    fast with clear next steps for your landscaping or irrigation project.
                   </p>
-                  <ul className="list-with-icons">
-                    <li>
-                      <Leaf size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Custom landscaping design and installation</span>
-                    </li>
-                    <li>
-                      <Droplets size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Efficient irrigation systems and repairs</span>
-                    </li>
-                    <li>
-                      <TreePine size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Year-round lawn and landscape maintenance</span>
-                    </li>
-                    <li>
-                      <Building2 size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Residential and commercial services</span>
-                    </li>
-                    <li>
-                      <Lamp size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Landscape lighting for flowerbeds and walkways</span>
-                    </li>
-                    <li>
-                      <Sparkles size={18} className="list-with-icons__icon" aria-hidden />
-                      <span>Christmas light installation on houses</span>
-                    </li>
+                  <ul className="home-estimate__chips" aria-label="Why reach out">
+                    <li>Licensed irrigation</li>
+                    <li>Free estimates</li>
+                    <li>DFW metroplex</li>
                   </ul>
+                  <div className="home-estimate__phone">
+                    <span className="home-estimate__phone-label">Call us directly</span>
+                    <a href={`tel:${PHONE_TEL}`} className="home-estimate__phone-num">
+                      <Phone size={18} aria-hidden className="home-estimate__phone-icon" />
+                      <span>{PHONE_DISPLAY}</span>
+                    </a>
+                  </div>
+                  <div className="home-estimate__actions">
+                    <Link href="/contact" className="btn btn--primary btn--lg">
+                      Request a quote
+                    </Link>
+                    <a href={`tel:${PHONE_TEL}`} className="btn btn--secondary btn--lg">
+                      Call now
+                    </a>
+                  </div>
+                  <p className="home-estimate__note">
+                    Prefer email?{" "}
+                    <Link href="/contact" className="link-with-icon">
+                      Contact us online
+                      <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
+                    </Link>
+                  </p>
                 </div>
-              </div>
-              <div className="w-full min-w-0">
-                <CardContainer
-                  containerClassName="!py-0 w-full max-w-none"
-                  className="w-full max-w-full"
-                >
-                  <CardBody className="!h-auto !w-full max-w-full aspect-[4/3] shadow-[var(--shadow-lg)] ring-1 ring-[var(--color-border)]">
-                    <CardItem
-                      translateZ={50}
-                      className="relative h-full min-h-[200px] w-full overflow-hidden"
-                    >
+                <div className="home-estimate__visual">
+                  <div className="home-estimate__photos">
+                    <div className="home-estimate__photo home-estimate__photo--back">
                       <Image
-                        src="/pic-2.webp"
-                        alt="Landscaping and irrigation work in DFW"
+                        src="/pic-28.webp"
+                        alt="Irrigation and lawn care in the Dallas–Fort Worth area"
                         fill
                         className="object-cover"
-                        sizes="(max-width: 767px) 100vw, 50vw"
+                        sizes="(max-width: 899px) 45vw, 320px"
                       />
-                    </CardItem>
-                  </CardBody>
-                </CardContainer>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="page-section page-section--surface page-section--tint-blue">
-        <div className="container container--wide">
-          <Reveal>
-            <div className="layout-grid layout-grid--reverse">
-              <div className="layout-grid__content">
-                <div className="section-eyebrow">
-                  <span className="section-eyebrow__dot" aria-hidden />
-                  Local trust
-                </div>
-                <h2>Trusted in the Dallas–Fort Worth Area</h2>
-                <p className="lead">
-                  From new installations to ongoing maintenance, we help homeowners and businesses
-                  across DFW keep their properties looking sharp—without the stress.
-                </p>
-                <p>
-                  <Link href="/about" className="link-with-icon">
-                    Our story &amp; credentials
-                    <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
-                  </Link>
-                </p>
-              </div>
-              <div className="layout-grid__media layout-grid__media--lift">
-                <Image
-                  src="/pic-9.webp"
-                  alt="Professional landscaping service in Dallas-Fort Worth"
-                  width={600}
-                  height={450}
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="page-section page-section--surface">
-        <div className="container container--wide">
-          <Reveal>
-            <div className="layout-grid">
-              <div className="layout-grid__content">
-                <div className="layout-grid__panel">
-                  <h2>Landscape Lighting</h2>
-                  <p className="lead">
-                    Illuminate paths, highlight plantings, and add ambiance and safety to your
-                    outdoor spaces with professional design and installation.
-                  </p>
-                </div>
-              </div>
-              <div className="layout-grid__media layout-grid__media--lift">
-                <Image
-                  src="/pic-14.webp"
-                  alt="Landscape lighting for flowerbeds and walkways in DFW"
-                  width={600}
-                  height={450}
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section
-        className="page-section page-section--seasonal"
-        aria-labelledby="seasonal-heading"
-      >
-        <div className="container container--wide">
-          <Reveal>
-            <div className="section-eyebrow section-eyebrow--light">
-              <span className="section-eyebrow__dot" aria-hidden />
-              Seasonal
-            </div>
-            <h2 id="seasonal-heading">Christmas Light Installation</h2>
-            <p className="lead">
-              We install holiday lighting on homes throughout DFW—from rooflines to trees and
-              displays—so you can enjoy the season without the ladder or takedown hassle.
-            </p>
-            <div className="seasonal-card">
-              <ChristmasLightFlyer />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="page-section page-section--surface">
-        <div className="container container--wide">
-          <Reveal>
-            <div className="cta-block">
-              <h2>Ready for a free estimate?</h2>
-              <p>
-                Spots fill quickly during peak seasons. Call today or send a message—we&apos;ll
-                follow up fast with next steps for your landscaping or irrigation project.
-              </p>
-              <p className="cta-phone">
-                <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
-              </p>
-              <div className="cta-block__actions">
-                <Link href="/contact" className="btn btn--ghost btn--lg">
-                  Request a quote
-                </Link>
-                <a href={`tel:${PHONE_TEL}`} className="btn btn--secondary btn--lg">
-                  Call now
-                </a>
-              </div>
-              <p className="cta-block__note">
-                Prefer email?{" "}
-                <Link href="/contact" className="link-with-icon">
-                  Contact us online
-                  <ArrowRight size={16} className="link-with-icon__arrow" aria-hidden />
-                </Link>
-              </p>
-              <div className="layout-images" style={{ marginTop: "var(--gap-xl)" }}>
-                <div className="layout-images__cell">
-                  <Image
-                    src="/pic-21.webp"
-                    alt=""
-                    width={400}
-                    height={300}
-                    sizes="(max-width: 767px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="layout-images__cell">
-                  <Image
-                    src="/pic-28.webp"
-                    alt=""
-                    width={400}
-                    height={300}
-                    sizes="(max-width: 767px) 50vw, 25vw"
-                  />
+                    </div>
+                    <div className="home-estimate__photo home-estimate__photo--front">
+                      <Image
+                        src="/pic-21.webp"
+                        alt="Landscaping project in the Dallas–Fort Worth area"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 899px) 55vw, 380px"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
