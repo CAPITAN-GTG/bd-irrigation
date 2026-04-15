@@ -1,5 +1,5 @@
 /** Project photos in /public (webp). Keep in sync with files on disk. */
-export const GALLERY_COUNT = 32;
+export const GALLERY_COUNT = 42;
 
 export const GALLERY_IMAGE_PATHS: readonly string[] = Array.from(
   { length: GALLERY_COUNT },

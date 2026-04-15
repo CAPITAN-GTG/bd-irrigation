@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer texture-overlay">
       <div className="footer__top-accent" aria-hidden />
       <div className="footer__inner">
         <div className="footer__grid">

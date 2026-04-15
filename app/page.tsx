@@ -98,7 +98,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section home-offerings-dark" aria-labelledby="offerings-heading">
+      <section
+        className="page-section home-offerings-dark texture-overlay"
+        aria-labelledby="offerings-heading"
+      >
         <Reveal>
           <header className="home-offerings-dark__head home-section__head home-section__head--center">
             <div className="section-eyebrow">
@@ -160,7 +163,7 @@ export default function HomePage() {
       <section className="home-lighting-slash" aria-labelledby="lighting-heading">
         <div className="home-lighting-slash__grid">
           <ParallaxSlashFigure
-            src="/pic-25.webp"
+            src="/pic-38.webp"
             alt="Landscape lighting for flowerbeds and walkways in DFW"
             figureClassName="home-lighting-slash__figure-wrap"
             imgClassName="home-lighting-slash__img object-cover"
@@ -192,7 +195,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section page-section--seasonal" aria-labelledby="seasonal-heading">
+      <section
+        className="page-section page-section--seasonal texture-overlay"
+        aria-labelledby="seasonal-heading"
+      >
         <Reveal>
           <ChristmasLightsBand />
         </Reveal>
@@ -266,7 +272,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section home-estimate" aria-labelledby="estimate-heading">
+      <section className="page-section home-estimate texture-overlay" aria-labelledby="estimate-heading">
         <div className="container container--home">
           <Reveal>
             <div className="home-estimate__card">
