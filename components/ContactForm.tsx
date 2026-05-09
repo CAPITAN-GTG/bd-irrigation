@@ -2,37 +2,56 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
+import {
+  contactSchema,
+  type ContactFormValues,
+} from "@/lib/contact-schema";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Enter a valid email address"),
-  phone: z.string().optional(),
-  message: z
-    .string()
-    .min(10, "Please add a bit more detail (at least 10 characters)"),
-});
-
-export type ContactFormValues = z.infer<typeof contactSchema>;
+export type { ContactFormValues };
 
 export function ContactForm() {
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { name: "", email: "", phone: "", message: "" },
   });
 
+  const phoneValue = watch("phone") ?? "";
+
+  function formatPhone(input: string) {
+    const d = input.replace(/\D/g, "").slice(0, 10);
+    if (d.length === 0) return "";
+    if (d.length < 4) return `(${d}`;
+    if (d.length < 7) return `(${d.slice(0, 3)}) ${d.slice(3)}`;
+    return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+  }
+
   async function onSubmit(data: ContactFormValues) {
-    await new Promise((r) => setTimeout(r, 600));
-    if (process.env.NODE_ENV === "development") {
-      console.info("[contact]", data);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const payload = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      const msg =
+        typeof payload.error === "string"
+          ? payload.error
+          : "Something went wrong. Please try again or call us.";
+      toast.error(msg);
+      return;
     }
+
     toast.success(
       "Message sent! We'll get back to you shortly — for urgent needs, call us directly.",
     );
@@ -88,9 +107,25 @@ export function ContactForm() {
           id="phone"
           type="tel"
           autoComplete="tel"
+          inputMode="numeric"
           placeholder="(555) 555-5555"
-          {...register("phone")}
+          value={phoneValue}
+          aria-invalid={errors.phone ? "true" : "false"}
+          aria-describedby={errors.phone ? "phone-error" : undefined}
+          maxLength={14}
+          onChange={(e) => {
+            setValue("phone", formatPhone(e.target.value), {
+              shouldValidate: true,
+              shouldDirty: true,
+            });
+          }}
+          onBlur={register("phone").onBlur}
         />
+        {errors.phone && (
+          <span id="phone-error" className="form-error" role="alert">
+            {errors.phone.message}
+          </span>
+        )}
       </div>
 
       <div className="form-group">
